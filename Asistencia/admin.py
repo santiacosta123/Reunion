@@ -1,4 +1,5 @@
 from django.contrib import admin
+from import_export.admin import ImportExportModelAdmin
 
 from .models import Lider, Persona, Asistencia, Reunion
 
@@ -33,13 +34,13 @@ class AsistenciaAdmin(admin.ModelAdmin):
 
 
 
-class PersonaAdmin(admin.ModelAdmin):
+class PersonaAdmin(ImportExportModelAdmin):
     list_display = ('nombre_completo', 'cedula','telefono', 'lider_referido',)
     search_fields = ('nombre_completo', 'cedula', 'lider_referido__nombre_completo',)
     ordering = ['nombre_completo', 'cedula', 'lider_referido']
     raw_id_fields = ['lider_referido', ]
 
-class LiderAdmin(admin.ModelAdmin):
+class LiderAdmin(ImportExportModelAdmin):
     list_display = ('nombre_completo',)
     search_fields = ('nombre_completo',)
     ordering = ['nombre_completo',]

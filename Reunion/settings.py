@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'import_export',
     'Asistencia',
 ]
 
@@ -77,7 +78,7 @@ WSGI_APPLICATION = 'Reunion.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.pg2',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'dcshn40epieg45',
         'USER': 'hfmfkmmaweeqsx',
         'PASSWORD': '7108b571079dbf4ed645ca438eff5b567270dc60da077dc754bd5efca01bf5dd',
@@ -146,4 +147,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+IMPORT_EXPORT_USE_TRANSACTIONS = True
