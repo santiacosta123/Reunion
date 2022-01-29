@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'Reunion.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'reunion',
-        'USER': 'root',
-        # 'PASSWORD': 'paramore',
-        'HOST': 'localhost',
-        'PORT': '3307',
+        'ENGINE': 'django.db.backends.pg2',
+        'NAME': 'dcshn40epieg45',
+        'USER': 'hfmfkmmaweeqsx',
+        'PASSWORD': '7108b571079dbf4ed645ca438eff5b567270dc60da077dc754bd5efca01bf5dd',
+        'HOST': 'ec2-34-205-209-14.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
